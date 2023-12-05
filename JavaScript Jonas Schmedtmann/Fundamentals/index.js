@@ -140,7 +140,8 @@ if (ageToCheck === 18) console.log('You just became an adult! (strict)');
 '18' == 18; // true == do make type coercion
 '18' === 18; // false === does not make type coercion
 
-const favorite = Number(prompt("Input a number!"));
+// const favorite = Number(prompt("Input a number!"));
+const favorite = 23;
 console.log(typeof favorite);
 
 if (favorite === 23) {
@@ -199,6 +200,21 @@ switch (day) {
 
 // =====================================
 // the conditional ternary operator
+const myAgeNow = 40;
+myAgeNow >= 18 ? console.log('You are an adult') : console.log("You are a child!");
+
+const drink = myAgeNow >= 18 ? 'wine' : 'water';
+console.log("You are allowed to drink:", drink);
+
+// we can use ternary in template literals also, because it's an expression (produces a value)
+console.log(`I like to drink: ${myAgeNow >= 18 ? 'vodka' : 'water'}`);
+
+// calculate tip app (bill between 50 and 300, tip is 15%, else is 20%)
+const bill = 275;
+
+/* Write your code below. Good luck! 🙂 */
+const tip = (bill >= 50 && bill <= 300 ) ? bill * 0.15 : bill * 0.2;
+console.log(`The bill was ${bill}, the tip was ${tip}, and the total value ${bill + tip}`);
 
 
 // =====================================
