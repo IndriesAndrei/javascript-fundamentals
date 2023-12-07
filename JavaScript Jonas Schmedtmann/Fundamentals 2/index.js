@@ -144,3 +144,94 @@ const tips = [calcTip(bills[0]), calcTip(bills[1]), calcTip(bills[2])];
 const totals = [bills[0] + tips[0], bills[1] + tips[1], bills[2] + tips[2]];
 console.log(bills, tips);
 console.log(totals);
+
+
+// =======================================================
+// ======= Objects (key-value pairs) =======
+const jonasFriends = {
+  firstName: 'John',
+  lastName: 'Snow',
+  birthYear: 1991,
+  job: 'teacher',
+  friends: ['Michael', 'Sara', 'Fernando'],
+  hasDriversLicense: true,
+
+  // calcAge: function (birthYear) {
+  //   return 2037 - birthYear;
+  // }
+  calcAge: function () {
+    // console.log('This contains', this);
+    // return 2037 - this.birthYear;
+    this.age = 2037 - this.birthYear;
+    return this.age;
+  },
+
+  getSummary: function() {
+    return `${this.firstName} is a ${this.calcAge()}-year old ${jonasFriends.job}, and he has ${this.hasDriversLicense ? 'a' : 'no'} driver's license.`;
+  }
+};
+console.log(jonasFriends.age);
+console.log('Summary:', jonasFriends.getSummary());
+
+// retrieve data from Objects: with Dot (.) and Bracket ([]) notation
+console.log(jonasFriends.lastName);
+console.log(jonasFriends['lastName']);
+
+// add new properties
+jonasFriends.location = 'Portugal';
+jonasFriends['twitter'] = '@jonasschmedtman';
+console.log(jonasFriends);
+
+console.log(`${jonasFriends.firstName} has ${jonasFriends.friends.length} friends, and his best friend is called ${jonasFriends.friends[0]}`);
+
+// Object methods
+console.log(jonasFriends.calcAge(1991));
+
+// example
+const mark = {
+  fullName: 'Mark Miller',
+  mass: 78,
+  height: 1.69,
+  calcBMI: function () {
+    this.bmi = this.mass / this.height ** 2;
+    return this.bmi;
+  }
+}
+
+const john = {
+  fullName: 'John Doe',
+  mass: 92,
+  height: 1.95,
+  calcBMI: function () {
+    this.bmi = this.mass / this.height ** 2;
+    return this.bmi;
+  }
+}
+
+mark.calcBMI();
+john.calcBMI();
+console.log('Mark BMI:', mark.bmi, 'John BMI:', john.bmi);
+
+if (mark.bmi > john.bmi) {
+  console.log(`${mark.fullName}'s BMI (${mark.bmi}) is higher than ${john.fullName}'s BMI (${john.bmi})`);
+} else if (john.bmi > mark.bmi) {
+  console.log(`${john.fullName}'s BMI (${john.bmi}) is higher than ${mark.fullName}'s BMI (${mark.bmi})`);
+}
+
+// ================ For loop ====================
+for (let rep = 1; rep <= 10; rep++) {
+  console.log(`Lifting weights ${rep}`);
+}
+
+// loop through arrays
+const myArray = [
+  'Jonas',
+  'Schmedtmann',
+  2037 - 1991,
+  'teacher',
+  ['Michael', 'Peter', 'Steven']
+];
+
+for (let i = 0; i < myArray.length; i++) {
+  console.log(myArray[i]);
+}
