@@ -235,3 +235,48 @@ const myArray = [
 for (let i = 0; i < myArray.length; i++) {
   console.log(myArray[i]);
 }
+
+const myYears = [1990, 1995, 2000, 2010, 2015];
+const ages = [];
+
+for (let i = 0; i < myYears.length; i++) {
+  ages.push(2037 - myYears[i]);
+}
+
+console.log(ages);
+
+// === continue and break
+console.log('-----ONLY STRINGS --------');
+for (let i = 0; i < myArray.length; i++) {
+  if (typeof myArray[i] !== 'string') continue; // if the type is not string, continue (skip the current iteration and start the next one)
+  console.log(myArray[i], typeof myArray[i]);
+}
+
+console.log('-----BREAK WITH NUMBERS --------');
+for (let i = 0; i < myArray.length; i++) {
+  if (typeof myArray[i] === 'number') break; // break will terminate the loop immediately
+  console.log(myArray[i], typeof myArray[i]);
+}
+
+// === loop backwards in the array
+for (let i = myArray.length - 1; i >= 0; i--) {
+  console.log(myArray[i]);
+}
+
+// ======== loop inside the loop
+for (let exercise = 1; exercise <= 3; exercise++) {
+  console.log(`----- Starting exercise ${exercise}`);
+
+  for (let rep = 1; rep < 6; rep++) {
+    console.log(`Exercise ${exercise}: Lifting weights repetition ${rep}`);
+  }
+}
+
+// ======== While loop ========
+let rep = 1;
+while (rep <= 10) {
+  console.log(`Lifting weights repetition ${rep}`);
+  rep++;
+}
+
+
